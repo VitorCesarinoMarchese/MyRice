@@ -46,6 +46,8 @@ cp -r ~/.local/share/icons/ ~/.local/share/themes/ ./.local/share/
 
 ### Pictures
 
+**obs:** Pictures are my wallpapers and imgs that are used in the system.
+
 ```bash
 cp -r ~/Pictures/ ./Pictures/
 ```
@@ -58,4 +60,3 @@ Packages are the exception! You can run this every time you update your system
 pacman -Qqe > ./packages/pkglist.txt
 yay -Qqe > ./packages/aur_pkglist.txt
 ```
-
