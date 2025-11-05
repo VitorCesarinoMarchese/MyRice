@@ -1,0 +1,136 @@
+{
+  "layer": "top",
+  "spacing": 10,
+  "height": 40,
+  "modules-left": [
+    "tray",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+    "custom/music"
+  ],
+  "modules-right": [
+    "custom/bluetooth",
+    "custom/brightness",
+    "wireplumber",
+    "battery"
+  ],
+  "custom/music": {
+    "exec": "~/.config/waybar/scripts/music.sh",
+    "format": "{}",
+    "interval": 2,
+    "return-type": "json",
+    "on-click": "~/.config/waybar/scripts/music.sh playpause",
+    "on-click-middle": "~/.config/waybar/scripts/music.sh toggle",
+    "on-click-right": "~/.config/waybar/scripts/music.sh mixer",
+    "on-scroll-up": "~/.config/waybar/scripts/music.sh volup",
+    "on-scroll-down": "~/.config/waybar/scripts/music.sh voldown"
+  },
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "on-click": "~/.config/waybar/scripts/soundSlider.sh",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "battery": {
+    "interval": 2,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% {icon}",
+    "format-icons": {
+      "discharging": [
+        "󰂎",
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ],
+      "charging": [
+        "󰢟",
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ]
+    },
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "systemctl poweroff",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend"
+    },
+    "max-length": 25
+  },
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "sort-by-number": true
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10,
+    "tooltip": false
+  },
+  "clock": {
+    "format": "{:%I:%M %p -}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "on-click": "swaync-client -t -sw",
+    "tooltip": true,
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#eeece3'><b>{}</b></span>",
+        "days": "<span color='#d5c69d'><b>{}</b></span>",
+        "weeks": "<span color='#f1fa8c'><b>W{}</b></span>",
+        "weekdays": "<span color='#B9A0C8'><b>{}</b></span>",
+        "today": "<span color='#ff6e6e'><b><u>{}</u></b></span>"
+      }
+    },
+    "interval": 1
+  },
+  "custom/bluetooth": {
+    "exec": "~/.config/waybar/scripts/bluetooth.sh",
+    "interval": 2,
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/bluetoothtoggle.sh",
+    "on-click-right": "blueman-manager",
+    "on-click-middle": "notify-send 'Bluetooth Module' 'Click detected!'"
+  },
+  "custom/brightness": {
+    "exec": "~/.config/waybar/scripts/brightness.sh",
+    "return-type": "json",
+    "interval": 2,
+    "format": "{}",
+    "on-scroll-right": "brightnessctl set +5%",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-left": "brightnessctl set 5%-",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "tooltip": false
+  }
+}
