@@ -4,11 +4,11 @@
   "height": 40,
   "modules-left": [
     "tray",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "custom/music"
   ],
   "modules-center": [
-    "clock",
-    "custom/music"
+    "clock"
   ],
   "modules-right": [
     "custom/bluetooth",
@@ -22,10 +22,12 @@
     "interval": 2,
     "return-type": "json",
     "on-click": "~/.config/waybar/scripts/music.sh playpause",
-    "on-click-middle": "~/.config/waybar/scripts/music.sh toggle",
-    "on-click-right": "~/.config/waybar/scripts/music.sh mixer",
-    "on-scroll-up": "~/.config/waybar/scripts/music.sh volup",
-    "on-scroll-down": "~/.config/waybar/scripts/music.sh voldown"
+    "on-click-right": "~/.config/waybar/scripts/music.sh next",
+    "on-click-middle": "~/.config/waybar/scripts/music.sh previous",
+    "on-scroll-up": "~/.config/waybar/scripts/music.sh toggle"
+    // "on-click-right": "~/.config/waybar/scripts/music.sh mixer",
+    // "on-scroll-up": "~/.config/waybar/scripts/music.sh volup",
+    // "on-scroll-down": "~/.config/waybar/scripts/music.sh voldown"
   },
   "wireplumber": {
     "format": "{volume}% {icon}",
@@ -93,7 +95,7 @@
     "tooltip": false
   },
   "clock": {
-    "format": "{:%I:%M %p -}",
+    "format": "{:%I:%M %p}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "on-click": "swaync-client -t -sw",
     "tooltip": true,
@@ -131,6 +133,8 @@
     "on-scroll-up": "brightnessctl set +5%",
     "on-scroll-left": "brightnessctl set 5%-",
     "on-scroll-down": "brightnessctl set 5%-",
+    "on-click": "brightnessctl set +5%",
+    "on-click-right": "brightnessctl set 5%-",
     "tooltip": false
   }
 }

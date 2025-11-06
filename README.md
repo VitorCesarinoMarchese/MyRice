@@ -35,7 +35,7 @@ cp -r \
 ~/.config/mako \
 ~/.config/custom_scripts \
 ~/.config/pavucontrol.ini \
-~/rice_backup/.config/
+.config/
 ```
 
 ### .local

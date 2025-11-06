@@ -21,6 +21,15 @@ playpause)
   [ -n "$PLAYER" ] && playerctl --player="$PLAYER" play-pause
   exit 0
   ;;
+next)
+  [ -n "$PLAYER" ] && playerctl --player="$PLAYER" next
+  exit 0
+  ;;
+previous)
+  [ -n "$PLAYER" ] && playerctl --player="$PLAYER" previous
+  [ -n "$PLAYER" ] && playerctl --player="$PLAYER" previous
+  exit 0
+  ;;
 mixer)
   setsid -f kitty -e pulsemixer
   exit 0
@@ -57,9 +66,9 @@ fi
 
 # --- Choose metadata format ---
 if [ "$FORMAT" -eq 0 ]; then
-  META="{{ trunc(title,15) }} - {{ trunc(artist,15) }}"
+  META="{{ trunc(title,25) }} - {{ trunc(artist,25) }}"
 else
-  META="{{ trunc(title,15) }} - {{ trunc(album,15) }}"
+  META="{{ trunc(title,25) }} - {{ trunc(album,25) }}"
 fi
 
 # --- Set icon based on status ---
