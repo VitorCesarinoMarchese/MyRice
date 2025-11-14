@@ -41,7 +41,7 @@ rsync -r \
 ### .local
 
 ```bash
-cp -r ~/.local/share/icons/ ~/.local/share/themes/ ./.local/share/
+rsync -r ~/.local/share/icons/ ~/.local/share/themes/ ./.local/share/
 ```
 
 ### Pictures
@@ -49,7 +49,7 @@ cp -r ~/.local/share/icons/ ~/.local/share/themes/ ./.local/share/
 **obs:** Pictures are my wallpapers and imgs that are used in the system.
 
 ```bash
-cp -r ~/Pictures/ ./Pictures/
+rsync -r ~/Pictures/ ./Pictures/
 ```
 
 ### Packages
