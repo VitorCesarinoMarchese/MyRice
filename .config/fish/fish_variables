@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export BROWSER:zen
 SETUVAR --export GPG_TTY:/dev/pts/0
 SETUVAR --export LS_COLORS:\x3a\x3a\x3a\x3adi\x3d32
 SETUVAR --export QT_QPA_PLATFORMTHEME:qt6ct

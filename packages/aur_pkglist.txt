@@ -92,6 +92,7 @@ linux-firmware
 linux-headers
 linux-lts
 linux-lts-headers
+localsend-bin
 lua51
 luarocks
 lvm2
@@ -100,6 +101,7 @@ ly
 maven
 milou
 mpd
+mpv
 mtools
 nano
 nautilus
@@ -108,6 +110,7 @@ network-manager-applet
 nodejs
 noto-fonts-emoji
 npm
+obs-studio
 openssh
 os-prober
 otf-aurulent-nerd
@@ -146,6 +149,7 @@ qt5ct
 qt6-wayland
 qt6ct
 ranger
+rsync
 ruby
 sassc
 slurp
@@ -236,6 +240,7 @@ wlsunset
 wofi
 wpa_supplicant
 xdg-desktop-portal-gnome
+xdg-desktop-portal-hyprland
 xdg-desktop-portal-kde
 xdg-utils
 xorg-server

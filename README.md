@@ -17,7 +17,7 @@ After that you can start the process.
 ### .config
 
 ```bash
-cp -r \
+rsync -r \
 ~/.config/hypr \
 ~/.config/waybar \
 ~/.config/kitty \
