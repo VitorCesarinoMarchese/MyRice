@@ -72,7 +72,21 @@ git clone https://github.com/yourusername/MyRice.git
 cd MyRice
 ```
 
-2. Restore `.config`
+2. Reinstall Packages
+
+Official packages:
+
+```bash
+sudo pacman -S --needed - < ./packages/pkglist.txt
+```
+
+AUR packages:
+
+```bash
+yay -S --needed - < ./packages/aur_pkglist.txt
+```
+
+3. Restore `.config`
 
 ```bash
 rsync -r \
@@ -96,31 +110,27 @@ rsync -r \
 ~/.config/
 ```
 
-3. Restore `.local/share`
+4. Restore `.local/share`
+
+obs: you may need to download the [icons](https://www.gnome-look.org/p/1961046) again
 
 ```bash
-rsync -r ./.local/share/icons/ ~/.local/share/
-rsync -r ./.local/share/themes/ ~/.local/share/
+rsync -r ./.local/share/icons/ ~/.local/share/icons/
+rsync -r ./.local/share/themes/ ~/.local/share/themes/
+gsettings set org.gnome.desktop.interface icon-theme 'Gruvbox-Plus-Dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Plus-Dark'
 ```
 
-4. Restore Pictures (Wallpapers / System Images)
+5. Restore Pictures (Wallpapers / System Images)
 
 ```bash
-rsync -r ./Pictures/ ~/Pictures/
+rsync -r ./ ~/Pictures/
 ```
 
-5. Reinstall Packages
-
-Official packages:
+6. Setup fish
 
 ```bash
-sudo pacman -S --needed - < ./packages/pkglist.txt
+chsh -s /usr/bin/fish
 ```
 
-AUR packages:
-
-```bash
-yay -S --needed - < ./packages/aur_pkglist.txt
-```
-
-6. Reboot
+7. Reboot
